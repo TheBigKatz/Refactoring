@@ -1,0 +1,48 @@
+<!--
+Refactor the following code to remove code duplication and to
+make adding additonal balls easy.
+
+1. Use objects to group related variables and turn them into
+properties of objects.
+2. Use an array to hold all objects that represent balls.
+3. Instead of using object literals, create a Ball type, and use the `new` statement to create new balls.
+4. Put 10 balls on the canvas.
+
+If you are done with this, go to balls2.html.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Balls</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var x1 = 100;
+    var y1 = 100;
+    var radius1 = 10;
+    var color1 = 'red';
+    var x2 = 300;
+    var y2 = 400;
+    var radius2 = 30;
+    var color2 = 'green';
+    function main() {
+      ctx.fillStyle = 'yellow';
+      ctx.fillRect(0, 0, 500, 500);
+      ctx.beginPath();
+      ctx.fillStyle = color1;
+      ctx.ellipse(x1, y1, radius1, radius1, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.fillStyle = color2;
+      ctx.ellipse(x2, y2, radius2, radius2, 0, 0, Math.PI * 2);
+      ctx.fill();
+      requestAnimationFrame(main);
+    }
+    main();
+    </script>
+  </body>
+</html>
